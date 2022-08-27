@@ -6,16 +6,14 @@ namespace Stone
 {
     internal class Program
     {
-        static int Main()
+        static void Main()
         {
             double salarioValor = GetSalario();
-
-            var salario = (Salario) Activator.CreateInstance(GetOpcaoTipo(), salarioValor);
+            var salario = (Salario) Activator.CreateInstance( GetOpcaoTipo(), salarioValor);
             
             salario.Imprime();
             
             Console.ReadKey();
-            return 0;
         }
 
         static Type GetOpcaoTipo()
@@ -47,16 +45,15 @@ namespace Stone
         static double GetSalario()
         {
             Console.Write("Quanto o funcionario ganha por mes: ");
-            double salario = 0;
+            double salario = .0;
             try
             {
                 salario = Double.Parse(Console.ReadLine());
             }
             catch (Exception)
             {
-                Console.WriteLine($"O salario possui um formato invalido!");
-                Console.ReadKey();
-                GetSalario();
+                Console.WriteLine("O salario possui um formato invalido!");
+                salario = GetSalario();
             }
             return salario;
         }
