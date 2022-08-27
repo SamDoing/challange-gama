@@ -20,10 +20,14 @@ namespace Stone
 
         static Type GetOpcaoTipo()
         {
-            var salarios = Assembly.GetExecutingAssembly().GetTypes().Where( t => typeof(Salario).IsAssignableFrom(t) && t != typeof(Salario) );
+            var salarios = Assembly
+                .GetExecutingAssembly()
+                .GetTypes()
+                .Where( t => t.BaseType == typeof(Salario) );
+
             Type salarioTipo = null;
 
-            while(salarioTipo == null)            
+            while(salarioTipo == null)
             {
                 Console.WriteLine("--------Opcoes-------");
 
