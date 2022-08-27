@@ -9,7 +9,7 @@ namespace Stone
         static void Main()
         {
             double salarioValor = GetSalario();
-            var salario = (Salario) Activator.CreateInstance( GetOpcaoTipo(), salarioValor);
+            var salario = (Salario) Activator.CreateInstance( GetOpcaoTipo(), salarioValor );
             
             salario.Imprime();
             
