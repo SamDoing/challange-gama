@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Stone
 {
-    internal class SalarioPorAno : Salario
+    [Salario("salario por ano")]
+    internal class SalarioAno : Salario
     {
-        public SalarioPorAno(double salario)
+        public SalarioAno(double salario)
         {
             salarioCalculado = salario * 12;
             tipo = "ano";

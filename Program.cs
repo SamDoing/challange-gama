@@ -29,8 +29,8 @@ namespace Stone
             {
                 Console.WriteLine("--------Opcoes-------");
 
-                foreach (var salario in salarios.Select( (t, i) => new { index = i, nome = t.Name } ))
-                    Console.WriteLine($"{salario.index} - {salario.nome.SplitCamelCase().ToLower()}");
+                foreach (var salario in salarios.Select((t, i) => new { index = i, nome = t.GetCustomAttribute<SalarioAttribute>().Mensagem } ))
+                    Console.WriteLine($"{salario.index} - {salario.nome}");
 
                 Console.Write("Opcao: ");
                 
