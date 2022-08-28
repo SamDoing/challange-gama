@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stone
 {
+    [Salario("attribute mensagem not declared.")]
     internal abstract class Salario
     {
         protected double salarioCalculado;
