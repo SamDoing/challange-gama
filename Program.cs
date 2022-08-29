@@ -42,6 +42,7 @@ namespace Stone
             return salarioTipo;
         }
 
+        //Stack overflow by recursion vunerable
         static double GetSalario()
         {
             Console.Write("Quanto o funcionario ganha por mes: ");
